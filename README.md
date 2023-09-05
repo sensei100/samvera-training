@@ -1,18 +1,11 @@
-# Hyku, the Hydra-in-a-Box Repository Application
+# SoftServ Training Workshops 2023
 
-Code:
-[![Build Status](https://circleci.com/gh/samvera/hyku.svg?style=svg)](https://circleci.com/gh/samvera/hyku)
-[![Coverage Status](https://coveralls.io/repos/samvera/hyku/badge.svg?branch=master&service=github)](https://coveralls.io/github/samvera/hyku?branch=master)
-[![Stories in Ready](https://img.shields.io/waffle/label/samvera/hyku/ready.svg)](https://waffle.io/samvera/hyku)
+This repository is based on the latest version of Hyku as of September 5, 2023. Commit sha: [`10c56d8`](https://github.com/samvera/hyku/tree/10c56d88485206aadb1c1cc5d4bec205c10205f0) (6 months ahead of `v5.0.1`)
 
-Docs:
-[![Documentation](http://img.shields.io/badge/DOCUMENTATION-wiki-blue.svg)](https://github.com/samvera/hyku/wiki)
-[![Contribution Guidelines](http://img.shields.io/badge/CONTRIBUTING-Guidelines-blue.svg)](./CONTRIBUTING.md)
-[![Apache 2.0 License](http://img.shields.io/badge/APACHE2-license-blue.svg)](./LICENSE)
+To view the README at that point, please refer to the drop down below.
+<details>
+ <summary>README</summary>
 
-Jump In: [![Slack Status](http://slack.samvera.org/badge.svg)](http://slack.samvera.org/)
-
-----
 ## Table of Contents
 
   * [Running the stack](#running-the-stack)
@@ -353,3 +346,5 @@ This software is brought to you by the Samvera community.  Learn more at the
 [Samvera website](http://samvera.org/).
 
 ![Samvera Logo](https://samvera.atlassian.net/wiki/download/attachments/405216084/samvera-fall-TM-220w-transparent.png?version=1&modificationDate=1540440075555&cacheVersion=1&api=v2)
+
+</details>
