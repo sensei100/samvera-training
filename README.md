@@ -1,12 +1,55 @@
 # SoftServ Training Workshops 2023
 
-This repository is based on the latest version of Hyku as of September 5, 2023. Commit sha: [`10c56d8`](https://github.com/samvera/hyku/tree/10c56d88485206aadb1c1cc5d4bec205c10205f0) (6 months ahead of `v5.0.1`)
+This repository is based on the latest version of Hyku as of September 5, 2023. Commit sha: [`10c56d8`](https://github.com/samvera/hyku/tree/10c56d88485206aadb1c1cc5d4bec205c10205f0) (~6 months ahead of `v5.0.1`)
 
-To view the README at that point, please refer to the drop down below.
+To view the README at that point, please refer to the drop down at the bottom of this file.
+
+### Session 1: Spinning Up a Samvera Application
+- Date: September 6, 2023
+- Instructor: [Summer Cook](https://github.com/summer-cook)
+
+### Session 2: Work Types
+- Date: September 13, 2023
+- Instructor: [Shana Moore](https://github.com/ShanaLMoore)
+
+### Session 3: Customizing Search and Facets
+- Date: September 20, 2023
+- Instructor: [Kait Sewell](https://github.com/K8Sewell)
+
+### Session 4: Theming and UI Development in Samvera
+- Date: September 27, 2023
+- Instructor: [LeaAnn Bradford](https://github.com/labradford)
+
+### Session 5: Bulkrax Intro
+- Date: October 4, 2023
+- Instructor: [Alisha Evans](https://github.com/alishaevn)
+
+### Session 6: Testing
+- Date: October 11, 2023
+- Instructors: [Kait Sewell](https://github.com/K8Sewell) w/ [Jeremy Friesen](https://github.com/jeremyf)
+
+### Session 7: Samvera Maintenance
+- Date: October 18, 2023
+- Instructor: [Rob Kaufman](https://github.com/orangewolf)
+
+### Session 8: Installing and Configuring Gems Part I: DOI & OAI
+- Date: November 1, 2023
+- Instructor: [LaRita Robinson](https://github.com/laritakr)
+
+### Session 9: Development Best Practices
+- Date: November 8, 2023
+- Instructor: [Jeremy Friesen](https://github.com/jeremyf)
+
+### Session 10: Deploying to AWS:  Helm Mastery
+- Date: November 15, 2023
+- Instructor: [April Rieger](https://github.com/aprilrieger) w/ [Rob Kaufman](https://github.com/orangewolf)
+
+
+<hr>
 <details>
- <summary>README</summary>
+ <summary>HYKU README</summary>
 
-## Table of Contents
+### Table of Contents
 
   * [Running the stack](#running-the-stack)
     * [For development](#for-development)
@@ -31,11 +74,11 @@ To view the README at that point, please refer to the drop down below.
 
 ----
 
-## Running the stack
+### Running the stack
 
-### For development / testing with Docker
+#### For development / testing with Docker
 
-#### Dory
+###### Dory
 
 On OS X or Linux we recommend running [Dory](https://github.com/FreedomBen/dory). It acts as a proxy allowing you to access domains locally such as hyku.test or tenant.hyku.test, making multitenant development more straightforward and prevents the need to bind ports locally. Be sure to [adjust your ~/.dory.yml file to support the .test tld](https://github.com/FreedomBen/dory#config-file).  You can still run in development via docker with out Dory. To do so, copy `docker-compose.override-nodory.yml` to `docker-compose.override.yml` before starting doing docker-compose up.  You can then see the application t the loopback domain 'lvh.me:3000'.
 
@@ -44,7 +87,7 @@ gem install dory
 dory up
 ```
 
-#### Basic steps
+###### Basic steps
 
 ```bash
 docker-compose up web
@@ -52,7 +95,7 @@ docker-compose up web
 
 This command starts the whole stack in individual containers allowing Rails to be started or stopped independent of the other services.  Once that starts (you'll see the line `Passenger core running in multi-application mode.` to indicate a successful boot), you can view your app in a web browser with at either hyku.test or localhost:3000 (see above).  When done `docker-compose stop` shuts down everything.
 
-#### Tests in Docker
+###### Tests in Docker
 
 The full spec suite can be run in docker locally. There are several ways to do this, but one way is to run the following:
 
@@ -60,11 +103,11 @@ The full spec suite can be run in docker locally. There are several ways to do t
 docker-compose exec web rake
 ```
 
-### With out Docker
+#### With out Docker
 
 Please note that this is unused by most contributors at this point and will likely become unsupported in a future release of Hyku unless someone in the community steps up to maintain it.
 
-#### For development
+###### For development
 
 ```bash
 solr_wrapper
@@ -75,11 +118,11 @@ bin/setup
 DISABLE_REDIS_CLUSTER=true bundle exec sidekiq
 DISABLE_REDIS_CLUSTER=true bundle exec rails server -b 0.0.0.0
 ```
-#### For testing
+###### For testing
 
 See the [Hyku Development Guide](https://github.com/samvera/hyku/wiki/Hyku-Development-Guide) for how to run tests.
 
-### Working with Translations
+#### Working with Translations
 
 You can log all of the I18n lookups to the Rails logger by setting the I18N_DEBUG environment variable to true. This will add a lot of chatter to the Rails logger (but can be very helpful to zero in on what I18n key you should or could use).
 
@@ -87,13 +130,13 @@ You can log all of the I18n lookups to the Rails logger by setting the I18N_DEBU
 $ I18N_DEBUG=true bin/rails server
 ```
 
-### On AWS
+#### On AWS
 
 AWS CloudFormation templates for the Hyku stack are available in a separate repository:
 
 https://github.com/hybox/aws
 
-### With Docker
+#### With Docker
 
 We distribute two `docker-compose.yml` configuration files.  The first is set up for development / running the specs. The other, `docker-compose.production.yml` is for running the Hyku stack in a production setting. . Once you have [docker](https://docker.com) installed and running, launch the stack using e.g.:
 
@@ -107,15 +150,15 @@ Note: You may need to add your user to the "docker" group.
 newgrp docker
 ```
 
-### With Vagrant
+#### With Vagrant
 
 The [samvera-vagrant project](https://github.com/samvera-labs/samvera-vagrant) provides another simple way to get started "kicking the tires" of Hyku (and [Hyrax](http://hyr.ax/)), making it easy and quick to spin up Hyku. (Note that this is not for production or production-like installations.) It requires [VirtualBox](https://www.virtualbox.org/) and [Vagrant](https://www.vagrantup.com/).
 
-### With Kubernetes
+#### With Kubernetes
 
 Hyku relies on the helm charts provided by Hyrax. See [Deployment Info](https://github.com/samvera/hyrax/blob/main/CONTAINERS.md#deploying-to-production) for more information. We also provide a basic helm [deployment script](bin/helm_deploy). Hyku currently needs some additional volumes and ENV vars over the base Hyrax. See (ops/review-deploy.tmpl.yaml) for an example of what that might look like.
 
-## Single Tenant Mode
+### Single Tenant Mode
 
 Much of the default configuration in Hyku is set up to use multi-tenant mode.  This default mode allows Hyku users to run the equivielent of multiple Hyrax installs on a single set of resources. However, sometimes the subdomain splitting multi-headed complexity is simply not needed.  If this is the case, then single tenant mode is for you.  Single tenant mode will not show the tenant sign up page, or any of the tenant management screens. Instead it shows a single Samvera instance at what ever domain is pointed at the application.
 
@@ -125,7 +168,7 @@ In single tenant mode, both the application root (eg. localhost, or hyku.test) a
 
 To change from single- to multi-tenant mode, change the multitenancy/enabled flag to true and restart the application. Change the 'single' tenant account cname in the Accounts edit interface to the correct hostname.
 
-## Switching accounts
+### Switching accounts
 There are three recommend ways to switch your current session from one account to another by using:
 ```ruby
 switch!(Account.first)
@@ -135,14 +178,14 @@ switch!('my.site.com')
 switch!('myaccount')
 ```
 
-## Analytics Feature
+### Analytics Feature
 Hyku currently only supports the configuration of one Google Analytics account for the basic functionality of this feature. Hyku currently only support Google Analytics with the Universal Analytics property for this feature.
 
 Note: Google has announced they will stop processing data using the Universal Analytics property on July 1, 2023  or July 1, 2024 for Analytics 360 properties.
 
 To enable analytics tracking and reporting features within Hyku, please follow the directions below.
 
-### Setup a Google Analytics Account
+#### Setup a Google Analytics Account
 - Create a Service Account: https://cloud.google.com/iam/docs/creating-managing-service-accounts
   - Note the service account email
   - When making a service account key, make sure the key type is set to p12
@@ -154,7 +197,7 @@ To enable analytics tracking and reporting features within Hyku, please follow t
 - Enable the "Google Analytics API": https://developers.google.com/identity/protocols/oauth2/web-server#enable-apis
 - Enable the "IAM Service Account Credentials API": https://developers.google.com/identity/protocols/oauth2/web-server#enable-apis
 
-### Set the Environment Variables
+#### Set the Environment Variables
 In Hyku there are a few areas to set the environment variables needed for each of your environments development/staging/prodeuction/etc.
 
 - Uncomment the config/analytics.yml file where the below mentioned environment variables will connect to our application.
@@ -173,7 +216,7 @@ analytics:
 - For local development please see the .env file and see the "Enable Google Analytics" section.
 
 ```yaml
-##START## Enable Google Analytics
+###START### Enable Google Analytics
 # Uncomment to enable and configure Google Analytics, see README for instructions.
 HYRAX_ANALYTICS=true
 GOOGLE_ANALYTICS_ID=UA-123456-12
@@ -185,7 +228,7 @@ GOOGLE_OAUTH_CLIENT_EMAIL=set-me@email.com
 
 # AND comment this out
 # HYRAX_ANALYTICS=false
-##END## Enable Google Analytics
+###END### Enable Google Analytics
 ```
 
 - For deployment to staging/production please update/add the variables and values to the helm values files located in the ops directory (example: staging-deploy.tmpl.yaml).
@@ -215,7 +258,7 @@ To get the `GOOGLE_OAUTH_PRIVATE_KEY_VALUE` value to set the variable in GitHub'
 
 Once you run this script the value is on your local computers clipboard. You will need to paste this into GitHubs Environment Secrets or however you/your organization are handling secrets.
 
-## Environment Variables
+### Environment Variables
 
 | Name | Description | Default | Development or Test Only |
 | ------------- | ------------- | ------------- | ------------- |
@@ -309,36 +352,36 @@ Once you run this script the value is on your local computers clipboard. You wil
 | SOLR_URL | URL for the Solr connection | http://admin:admin@solr:8983/solr/ | no |
 | WEB_CONCURRENCY | Number of processes to run in either puma or sidekiq | 2 | no |
 
-## Development Dependencies
+### Development Dependencies
 
-### Postgres
+#### Postgres
 
 Hyku supports multitenancy using the `apartment` gem. `apartment` works best with a postgres database.
 
-## Importing
-### Bulkrax:
+### Importing
+#### Bulkrax:
 
 Bulkrax is enabled by default and CSV, OAI and XML importers can be used in the admin dashboard or through the command line API.
 More info about configuring and using bulkrax can be found [here](https://github.com/samvera-labs/bulkrax/wiki)
 
-### Commandline Importers
+#### Commandline Importers
 
 Importing from CSV and PURL directly can be done via Bulkrax and the built in code in Hyku is slated for deletion in the next release.
 
-## Compatibility
+### Compatibility
 
 * Ruby 2.7 is recommended.  Later versions may also work.
 * Rails 5.2 is required.
 
-### Product Owner
+#### Product Owner
 
 [orangewolf](https://github.com/orangewolf)
 
-## Help
+### Help
 
 The Samvera community is here to help. Please see our [support guide](./SUPPORT.md).
 
-## Acknowledgments
+### Acknowledgments
 
 This software was developed by the Hydra-in-a-Box Project (DPLA, DuraSpace, and Stanford University) under a grant from IMLS.
 
