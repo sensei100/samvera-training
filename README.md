@@ -1,18 +1,54 @@
-# Hyku, the Hydra-in-a-Box Repository Application
+# SoftServ Training Workshops 2023
 
-Code:
-[![Build Status](https://circleci.com/gh/samvera/hyku.svg?style=svg)](https://circleci.com/gh/samvera/hyku)
-[![Coverage Status](https://coveralls.io/repos/samvera/hyku/badge.svg?branch=master&service=github)](https://coveralls.io/github/samvera/hyku?branch=master)
-[![Stories in Ready](https://img.shields.io/waffle/label/samvera/hyku/ready.svg)](https://waffle.io/samvera/hyku)
+This repository is a fork of the latest version of [Hyku](https://github.com/samvera/hyku) as of September 5, 2023. Commit sha: [`10c56d8`](https://github.com/samvera/hyku/tree/10c56d88485206aadb1c1cc5d4bec205c10205f0) (~6 months ahead of `v5.0.1`)
 
-Docs:
-[![Documentation](http://img.shields.io/badge/DOCUMENTATION-wiki-blue.svg)](https://github.com/samvera/hyku/wiki)
-[![Contribution Guidelines](http://img.shields.io/badge/CONTRIBUTING-Guidelines-blue.svg)](./CONTRIBUTING.md)
-[![Apache 2.0 License](http://img.shields.io/badge/APACHE2-license-blue.svg)](./LICENSE)
+To view the README at that point, please refer to the drop down at the bottom of this file.
 
-Jump In: [![Slack Status](http://slack.samvera.org/badge.svg)](http://slack.samvera.org/)
+### Session 1: Spinning Up a Samvera Application
+- Date: September 6, 2023
+- Instructor: [Summer Cook](https://github.com/summer-cook)
 
-----
+### Session 2: Work Types
+- Date: September 13, 2023
+- Instructor: [Shana Moore](https://github.com/ShanaLMoore)
+
+### Session 3: Customizing Search and Facets
+- Date: September 20, 2023
+- Instructor: [Kait Sewell](https://github.com/K8Sewell)
+
+### Session 4: Theming and UI Development in Samvera
+- Date: September 27, 2023
+- Instructor: [LeaAnn Bradford](https://github.com/labradford)
+
+### Session 5: Bulkrax Intro
+- Date: October 4, 2023
+- Instructor: [Alisha Evans](https://github.com/alishaevn)
+
+### Session 6: Testing
+- Date: October 11, 2023
+- Instructors: [Kait Sewell](https://github.com/K8Sewell) w/ [Jeremy Friesen](https://github.com/jeremyf)
+
+### Session 7: Samvera Maintenance
+- Date: October 18, 2023
+- Instructor: [Rob Kaufman](https://github.com/orangewolf)
+
+### Session 8: Installing and Configuring Gems Part I: DOI & OAI
+- Date: November 1, 2023
+- Instructor: [LaRita Robinson](https://github.com/laritakr)
+
+### Session 9: Development Best Practices
+- Date: November 8, 2023
+- Instructor: [Jeremy Friesen](https://github.com/jeremyf)
+
+### Session 10: Deploying to AWS:  Helm Mastery
+- Date: November 15, 2023
+- Instructor: [April Rieger](https://github.com/aprilrieger) w/ [Rob Kaufman](https://github.com/orangewolf)
+
+
+<hr>
+<details>
+ <summary>HYKU README</summary>
+
 ## Table of Contents
 
   * [Running the stack](#running-the-stack)
@@ -353,3 +389,5 @@ This software is brought to you by the Samvera community.  Learn more at the
 [Samvera website](http://samvera.org/).
 
 ![Samvera Logo](https://samvera.atlassian.net/wiki/download/attachments/405216084/samvera-fall-TM-220w-transparent.png?version=1&modificationDate=1540440075555&cacheVersion=1&api=v2)
+
+</details>
