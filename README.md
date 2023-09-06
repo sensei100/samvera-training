@@ -103,6 +103,9 @@ This command starts the whole stack in individual containers allowing Rails to b
   - At the bottom of the host file add this line: `<your-ip-address> hyku.test`
   - Save (_You may or may not need to restart your server_)
 
+- When creating a work and adding a file, you get an internal server error due to ownership/permissions issues of the tmp directory:
+  - Gain root access to the container (in a slightly hacky way, check_volumes container runs from root): `docker compose run check_volumes bash`
+  - Change ownership to app: `chown -R app:app /app/samvera/hyrax-webapp`
 
 #### Tests in Docker
 
