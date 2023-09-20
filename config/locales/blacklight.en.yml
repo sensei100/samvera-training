@@ -12,6 +12,7 @@ en:
           keyword_sim: Keyword
           language_sim: Language
           publisher_sim: Publisher
+          resource_type_sim: Resource type
           subject_sim: Subject
         index:
           based_near_label_tesim: Location
