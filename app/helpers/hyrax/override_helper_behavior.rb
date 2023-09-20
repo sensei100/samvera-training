@@ -29,6 +29,12 @@ module Hyrax
       solr_field.first
     end
 
+    # This isn't pretty.  
+    # It feels like I should be able to access this serice label directly.
+    def department_service_label(id)
+      DepartmentsService.label(id)
+    end
+
     # @param [ActionController::Parameters] params first argument for Blacklight::SearchState.new
     # @param [Hash] facet
     # @note Ignores all but the first facet.  Probably a bug.

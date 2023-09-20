@@ -4,6 +4,7 @@ class CatalogController < ApplicationController
   include Hydra::Catalog
   include Hydra::Controller::ControllerBehavior
   include BlacklightOaiProvider::Controller
+  include DepartmentsService
 
   # These before_action filters apply the hydra access controls
   before_action :enforce_show_permissions, only: :show
@@ -69,12 +70,12 @@ class CatalogController < ApplicationController
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
-    config.add_facet_field 'human_readable_type_sim', label: "Type", limit: 5
     config.add_facet_field 'resource_type_sim', label: "Resource Type", limit: 5
     config.add_facet_field 'creator_sim', limit: 5
     config.add_facet_field 'contributor_sim', label: "Contributor", limit: 5
     config.add_facet_field 'keyword_sim', limit: 5
     config.add_facet_field 'subject_sim', limit: 5
+    config.add_facet_field 'department_sim', label: "Department", helper_method: :department_service_label
     config.add_facet_field 'language_sim', limit: 5
     config.add_facet_field 'based_near_label_sim', limit: 5
     config.add_facet_field 'publisher_sim', limit: 5
@@ -99,9 +100,6 @@ class CatalogController < ApplicationController
     config.add_index_field 'publisher_tesim', itemprop: 'publisher', link_to_search: 'publisher_sim'
     config.add_index_field 'based_near_label_tesim', itemprop: 'contentLocation', link_to_search: 'based_near_label_sim'
     config.add_index_field 'language_tesim', itemprop: 'inLanguage', link_to_search: 'language_sim'
-    config.add_index_field 'date_uploaded_dtsi', itemprop: 'datePublished', helper_method: :human_readable_date
-    config.add_index_field 'date_modified_dtsi', itemprop: 'dateModified', helper_method: :human_readable_date
-    config.add_index_field 'date_created_tesim', itemprop: 'dateCreated'
     config.add_index_field 'rights_statement_tesim', helper_method: :rights_statement_links
     config.add_index_field 'license_tesim', helper_method: :license_links
     config.add_index_field 'resource_type_tesim', label: "Resource Type", link_to_search: 'resource_type_sim'
