@@ -52,6 +52,7 @@ group :development, :test do
 
   gem 'rubocop', '~> 0.50', '<= 0.52.1'
   gem 'rubocop-rspec', '~> 1.22', '<= 1.22.2'
+  gem 'spring-commands-rspec'
 end
 
 group :test do

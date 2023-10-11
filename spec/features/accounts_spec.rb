@@ -34,7 +34,6 @@ RSpec.describe 'Accounts administration', multitenant: true do
       click_on 'Save'
 
       account.reload
-
       expect(account.cname).to eq 'example.com'
     end
 
