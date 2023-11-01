@@ -77,7 +77,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '>= 3.3.0'
-
+  gem 'brakeman'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'easy_translate'
@@ -143,3 +143,11 @@ gem 'tether-rails'
 # NameError: uninitialized constant Dry::Monads::Result::Transformer
 # Locking it to v1.4.x does not throw an error.
 gem 'dry-monads', '~> 1.4.0'
+Plugin.send(:load_plugin, 'bootboot') if Plugin.installed?('bootboot')
+
+if ENV['DEPENDENCIES_NEXT']
+  enable_dual_booting if Plugin.installed?('bootboot')
+
+  # Add any gem you want here, they will be loaded only when running
+  # bundler command prefixed with `DEPENDENCIES_NEXT=1`.
+end
